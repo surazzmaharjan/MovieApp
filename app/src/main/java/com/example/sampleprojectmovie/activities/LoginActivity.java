@@ -165,6 +165,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginU.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
+
                 if (response.isSuccessful()) {
 
                     Intent accountsIntent = new Intent(activity, NavigationActivity.class);
@@ -176,16 +177,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else {
 
                     switch (response.code()) {
-                        case 300:
-                            Snackbar.make(nestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG).show();
+                        case 400:
+                            Snackbar.make(nestedScrollView,"Wrong Email or password", Snackbar.LENGTH_LONG).show();
                             break;
 
-                        case 200:
-                            Snackbar.make(nestedScrollView, "Password Invalid", Snackbar.LENGTH_LONG).show();
-                            break;
-                        case 400:
-                            Snackbar.make(nestedScrollView, "Email doesn't exist", Snackbar.LENGTH_LONG).show();
-                            break;
                     }
                 }
             }

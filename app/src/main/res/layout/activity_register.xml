@@ -21,6 +21,16 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/image_logo" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie Review"
+            android:layout_marginLeft="10dp"
+            android:textSize="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorBlack"
+            />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutName"
             android:layout_width="match_parent"
